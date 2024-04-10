@@ -28,8 +28,15 @@ This repository is the official implementation of [TryOn-Adapter](https://arxiv.
 
 3. Generate Warped Cloth and Warped Mask based on the [GP-VTON](https://github.com/xiezhy6/GP-VTON.git).
 
-
-
+## Citation
+```
+@article{xing2024tryon,
+  title={TryOn-Adapter: Efficient Fine-Grained Clothing Identity Adaptation for High-Fidelity Virtual Try-On},
+  author={Xing, Jiazheng and Xu, Chao and Qian, Yijie and Liu, Yang and Dai, Guang and Sun, Baigui and Liu, Yong and Wang, Jingdong},
+  journal={arXiv preprint arXiv:2404.00878},
+  year={2024}
+}
+```
 
 ## Acknowledgements
 Our code is heavily borrowed from [Paint-by-Example](https://github.com/Fantasy-Studio/Paint-by-Example). We also thank [GP-VTON](https://github.com/xiezhy6/GP-VTON.git), our warping garments are generated from it.
