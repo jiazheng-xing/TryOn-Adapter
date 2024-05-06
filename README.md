@@ -12,6 +12,7 @@ This repository is the official implementation of [TryOn-Adapter](https://arxiv.
 
 ## TODO List
 - [x] ~~Release Texture Highlighting Map and Segmentation Map~~
+- [x] ~~Release Data Preparation Code~~
 - [ ] Release Inference Code
 - [ ]  Release model weights 
 - [ ] Release Training Code
@@ -19,7 +20,7 @@ This repository is the official implementation of [TryOn-Adapter](https://arxiv.
 ## Data Preparation
 1. The VITON-HD dataset serves as a benchmark. Download [VITON-HD](https://github.com/shadow2496/VITON-HD) dataset.
 
-2. In addition to above content, some other preprocessed conditions are in use in TryOn-Adapter.  The preprocessed data could be downloaded, respectively.
+2. In addition to above content, some other preprocessed conditions are in use in TryOn-Adapter.  The preprocessed data could be downloaded, respectively. The detail information and code see [data_preparation/README.md](data_preparation/README.md). 
 
    |Content|Google|Baidu|
    |---|---|---|
@@ -28,18 +29,8 @@ This repository is the official implementation of [TryOn-Adapter](https://arxiv.
 
 3. Generate Warped Cloth and Warped Mask based on the [GP-VTON](https://github.com/xiezhy6/GP-VTON.git).
 
-## Citation
-```
-@article{xing2024tryon,
-  title={TryOn-Adapter: Efficient Fine-Grained Clothing Identity Adaptation for High-Fidelity Virtual Try-On},
-  author={Xing, Jiazheng and Xu, Chao and Qian, Yijie and Liu, Yang and Dai, Guang and Sun, Baigui and Liu, Yong and Wang, Jingdong},
-  journal={arXiv preprint arXiv:2404.00878},
-  year={2024}
-}
-```
+
+
 
 ## Acknowledgements
 Our code is heavily borrowed from [Paint-by-Example](https://github.com/Fantasy-Studio/Paint-by-Example). We also thank [GP-VTON](https://github.com/xiezhy6/GP-VTON.git), our warping garments are generated from it.
-
-
-
