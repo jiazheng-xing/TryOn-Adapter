@@ -43,6 +43,46 @@ def show(title, array):
     plt.imshow(array)
     plt.show()
 
+def remap_image_vitionhd(img):
+    if isinstance(img,torch.Tensor):
+        img = np.array(img)
+        if img.ndim == 3:
+            img = (img[0] if img.shape[0] == 1 else img.transpose(1,2,0))
+    unique_image = np.unique(img)
+    if 9 in unique_image:
+        color_label_map = [
+            [0,0,0],
+            [254,0,0],
+            [0,0,254],
+            [254,85,0],
+            [0, 127, 0],
+            [51,169,220],
+            [0,254,254],
+            [85, 254, 169],
+            [169, 254, 85],
+            [254, 254, 0],
+            [254, 169, 0],
+            [85, 85, 0],
+            [52, 86, 127],
+         ]
+    else:
+        color_label_map = [
+             [0,0,0],
+             [254,0,0],
+             [0,0,254],
+             [254,85,0],
+             [0,85,85],
+             [51,169,220],
+             [0,254,254],
+             [85, 254, 169],
+             [169, 254, 85],
+             [254, 254, 0],
+             [254, 169, 0],
+             [85, 85, 0],
+             [52, 86, 127],
+        ]
+    rgb = remap_colors(img, color_label_map)
+    return rgb
 
 def get_unique_rgb_values(img):
     if isinstance(img,torch.Tensor):
@@ -407,4 +447,4 @@ if __name__ == '__main__':
             save_path = os.path.join(opt.save_dir,opt.dataset_mode,f'warped_{opt.paired}')
             os.makedirs(save_path,exist_ok=True)
             # breakpoint()
-            cv2.imwrite(os.path.join(save_path, inputs['img_name'][j]), view_image(inputs['seg'][j]))
+            cv2.imwrite(os.path.join(save_path, inputs['img_name'][j]), remap_image_vitionhd(inputs['seg'][j]))
